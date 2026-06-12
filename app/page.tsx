@@ -21,7 +21,10 @@ export default function HomePage() {
             <p className="mt-5 max-w-[420px] text-[17px] font-semibold leading-8 text-[var(--text-muted)]">
               校验卡密，上传照片，等待 AI 完成高清修复。
             </p>
-            <Link className="primary-button mt-9 block text-center" href="/restore">
+            <Link
+              className="primary-button mt-9 flex items-center justify-center text-center"
+              href="/restore"
+            >
               开始修复
             </Link>
           </div>

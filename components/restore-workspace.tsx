@@ -237,7 +237,6 @@ function CheckIcon() {
 }
 
 export function RestoreWorkspace() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
   const [code, setCode] = useState("");
   const [verifiedCode, setVerifiedCode] = useState("");
   const [verifiedStyle, setVerifiedStyle] = useState<string | null>(null);
@@ -696,7 +695,6 @@ export function RestoreWorkspace() {
 
   return (
     <main
-      data-theme={theme}
       className="min-h-screen bg-[var(--page-bg)] px-5 py-7 text-[var(--text-main)]"
     >
       <div className="mx-auto flex min-h-[calc(100vh-3.5rem)] w-full max-w-[540px] flex-col">
@@ -834,17 +832,6 @@ export function RestoreWorkspace() {
           </div>
         </section>
 
-        <div className="mt-5 flex justify-end">
-          <div className="flex rounded-full border border-[var(--line)] bg-[var(--surface)] p-1 shadow-[var(--shadow-soft)]">
-            <SegmentButton active>中文</SegmentButton>
-            <SegmentButton active={theme === "dark"} onClick={() => setTheme("dark")}>
-              深色
-            </SegmentButton>
-            <SegmentButton active={theme === "light"} onClick={() => setTheme("light")}>
-              浅色
-            </SegmentButton>
-          </div>
-        </div>
       </div>
     </main>
   );
@@ -962,29 +949,5 @@ function PreviewBlock({
         ) : null}
       </div>
     </div>
-  );
-}
-
-function SegmentButton({
-  active,
-  children,
-  onClick,
-}: {
-  active: boolean;
-  children: React.ReactNode;
-  onClick?: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`min-h-9 rounded-full px-5 text-[15px] font-black ${
-        active
-          ? "bg-white text-[var(--text-main)] shadow-[0_8px_18px_rgba(48,111,184,0.14)]"
-          : "text-[var(--text-main)] opacity-75"
-      }`}
-    >
-      {children}
-    </button>
   );
 }
