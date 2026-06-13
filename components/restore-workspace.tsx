@@ -699,8 +699,26 @@ export function RestoreWorkspace() {
     >
       <div className="mx-auto flex min-h-[calc(100vh-3.5rem)] w-full max-w-[540px] flex-col">
         <header className="flex items-center justify-between">
-          <Link href="/" className="text-[22px] font-extrabold tracking-tight text-[var(--brand)]">
-            content.up
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-full px-1 py-1 text-[16px] font-extrabold tracking-tight text-[var(--brand)] transition hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-300"
+            aria-label="返回首页"
+          >
+            <svg
+              aria-hidden="true"
+              className="size-5"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15 18 9 12l6-6"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2.6"
+              />
+            </svg>
+            返回
           </Link>
           <div className="pill-button">Photo Restore</div>
         </header>
